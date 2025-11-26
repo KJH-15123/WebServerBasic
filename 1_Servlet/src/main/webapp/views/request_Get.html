@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Get 방식</h3>
+	
+	<P>
+		특징 1. Get방식으로 요청한건 URL에 Header 영역에 데이터들을 포함시켜 요청한다 <br>
+		- 사용자가 입력한 값(데이터)들이 URL에 노출됨 <br>
+		- 보안 유지 불가능 <br>
+		- 로그인이나 회원가입 같이 중요데이터가 노출되는 경우 Get 방식은 부적합하다. <br><br>
+		
+		특징 2. Header 영역은 전송 데이터 길이에 제한이 있다. <br>
+		- 방대한 데이터를 담았을 경우 초과되는 데이터는 절단되어 넘어간다(데이터 손실)<br>
+		- 때문에 게시판 작성과 같이 데이터가 많은 요청에는 Get 방식이 부적합하다. <br><br>
+		
+		특징 3. 장점이라고 한다면 URL에 노출되는 형식이기 때문에 즐겨찾기가 가능하다 <br>
+		- 검색기능을 사용할 경우 Get 방식이 적합하다.<br>
+	</P>
+	
+	<h2>사용자 정보 요청</h2>
+	
+	<form action="/1_Servlet/test" method="get">
+		<ul>
+			<li>이름 : <input type="text" name="userName"></li>
+			<li>
+				성별 :
+				남자<input type="radio" name="gender" value="m" checked>
+				여자<input type="radio" name="gender" value="f">
+			</li>
+			<li>
+				나이 : <input type="number" name="age">
+			</li>
+			<li>
+				사는 도시:
+				<select name="address">
+					<option>서울</option>
+					<option>경기</option>
+					<option>대구</option>
+					<option>대전</option>
+					<option>부산</option>
+				</select>
+			</li>
+			<li>
+				키 : <input type="range" name="height" min="140" max="200">
+			</li>
+			<li>
+				좋아하는 음식류(중복 선택 가능) <br>
+				한식 <input type="checkbox" name="food" value="한식">
+				중식 <input type="checkbox" name="food" value="중식">
+				일식 <input type="checkbox" name="food" value="일식">
+				양식 <input type="checkbox" name="food" value="양식">
+				분식 <input type="checkbox" name="food" value="분식">
+			</li>
+			<li>
+				<input type="submit">
+				<input type="reset">
+			</li>
+		</ul>
+		
+	</form>
+
+</body>
+</html>
